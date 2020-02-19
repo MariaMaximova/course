@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>My_Site</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans&display=swap" rel="stylesheet">
+    <link href="{% static '/css/main.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <img
+                src="{% static 'svg/photo.svg' %}"
+                width="50"
+                height="50"
+        > My_Site_name
+        <a href="/about">
+            About
+        </a>
+        <a href="/register">
+            Register / Login
+        </a>
+    </header>
+
+    {% block content %}
+        <div class="card">
+
+
+        </div>
+    {% endblock %}
+
+
+
+</body>
+</html>
