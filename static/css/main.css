@@ -1,0 +1,132 @@
+
+body {
+
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background: linear-gradient(to left, #616161, #9bc5c3);
+  height: 25px;
+  box-shadow: grey 0px 1px 5px;
+
+
+  color: white;
+  font-size: 35px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1em;
+}
+
+
+
+#app {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.navbar {
+  display: inherit;
+  flex-direction: column;
+  width: 30%;
+  border-right: grey solid 2px;
+}
+
+.navbar a {
+  padding: 1em;
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 200ms ease-in;
+}
+
+.navbar a:hover {
+  cursor: pointer;
+  transform: translateY(1px);
+  background-color: rgba(214, 248, 255, 0.3);
+}
+
+.content {
+ /* flex: 1 0 auto*/
+  display: inherit;
+  width: 70%;
+  flex-direction: column;
+
+  background-color: #fafcfc;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  margin: 30px;
+  padding: 60px;
+
+  line-height: 1.5em;
+  text-indent: 30px;
+
+  border: lighgray 1px solid;
+  box-shadow: gray 1px 1px 1px 1px;
+
+  font-size: 28px;
+  font-family: 'Open Sans', sans-serif;;
+}
+
+.footer {
+  flex: 0 0 auto;
+  background: linear-gradient(45deg, #134E5E, #71B280);
+  height: 20px;
+
+  color: white;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  padding: 1em;
+}
+
+/* forms */
+form {
+    overflow:auto;
+}
+
+form p {
+    width:100%;
+    overflow:auto;
+}
+
+label {
+    float:left;
+    clear:both;
+    color:#333;
+    margin-bottom:4px;
+}
+input, textarea {
+    clear:both;
+    float:left;
+    margin:0 0 10px;
+    background:#efefef;
+    border:0;
+    padding:6px 10px;
+    font-size:14px;
+}
+input[type=submit], a.button {
+    font-weight:bold;
+    background:#12c064;
+    color:#fff;
+    padding:10px 20px;
+    font-size:14px;
+    text-transform:uppercase;
+}
+.errorlist {
+    color:#cc0033;
+    float:left;
+    clear:both;
+    padding-left:10px;
+}
+.helptext {
+    margin:0 0 20px 0;
+    color:#aaa;
+    clear:both;
+    float:left;
+    font-size:13px;
+}

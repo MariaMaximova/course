@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div class="card form">
+        <form method="post" action="/register">
+            {% csrf_token %}
+            {{ form }}
+            <input class="submit-btn" type="submit">
+        </form>
+    </div>
+{% endblock %}

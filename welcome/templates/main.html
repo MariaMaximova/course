@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html lang="en" dir="ltr">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <title>My_Site</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans&display=swap" rel="stylesheet">
+    <link href="{% static '/css/main.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <img
+                src="{% static 'svg/photo.svg' %}"
+                width="50"
+                height="50"
+        >
+
+        ImageMarks
+
+        <a href="/about">
+            About
+        </a>
+
+
+
+        <a href="/login">
+            Login
+        </a>
+    </header>
+
+    {% block content %}
+
+        <div class="card">
+            here is images of site + users
+
+
+        </div>
+    {% endblock %}
+
+
+    <div class="footer">
+        <div class="container">
+            <p>
+                Copyright &copy; 2020 Template by Bebeb
+            </p>
+        </div>
+    </div>
+
+</body>
+
+
+</html>
