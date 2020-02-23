@@ -2,6 +2,7 @@
 body {
 
   margin: 0;
+  flex-direction: column;
 }
 
 .header {
@@ -19,7 +20,6 @@ body {
   font-family: 'Montserrat', sans-serif;
   padding: 1em;
 }
-
 
 
 #app {
@@ -59,12 +59,14 @@ body {
 }
 
 .card {
+  flex: 0 0 auto;
   background: white;
   margin: 30px;
   padding: 60px;
 
   line-height: 1.5em;
   text-indent: 30px;
+  text-align: justify;
 
   border: lighgray 1px solid;
   box-shadow: gray 1px 1px 1px 1px;
@@ -100,6 +102,7 @@ label {
     color:#333;
     margin-bottom:4px;
 }
+
 input, textarea {
     clear:both;
     float:left;
@@ -109,6 +112,7 @@ input, textarea {
     padding:6px 10px;
     font-size:14px;
 }
+
 input[type=submit], a.button {
     font-weight:bold;
     background:#12c064;
@@ -117,12 +121,14 @@ input[type=submit], a.button {
     font-size:14px;
     text-transform:uppercase;
 }
+
 .errorlist {
     color:#cc0033;
     float:left;
     clear:both;
     padding-left:10px;
 }
+
 .helptext {
     margin:0 0 20px 0;
     color:#aaa;

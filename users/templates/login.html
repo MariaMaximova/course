@@ -1,17 +1,25 @@
 {% extends 'main.html' %}
 
+{% block title %}Login{% endblock %}
+
 {% block content %}
 
-  <h1>
-      Login
-  </h1>
+<div class="label">
 
-    <div class="card form" style="width: 40%;">
+
+</div>
+
+
+    <div class="card form" style="width: 60%;">
         Please enter your email and password!
         {% if error %}
         <span style="color: red;">
             Password or username is incorrect!
         </span>
+
+        <h1>
+            Login
+        </h1>
 
         {% endif %}
 

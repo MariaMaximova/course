@@ -17,14 +17,16 @@ def register(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
+            print(user)
             login(request, user)
             link = user.get_verification_link()
             user.email_user(
                 "Email confirmation",
                 f"Please follow the <a href='{link}'>link</a>",
-                from_email='admin@bio.com'
+                from_email='admin@adm.com'
             )
             user.verification_email_sent_at = timezone.now()
+            # Сохраняем пользователя в базе данных.
             user.save()
             return redirect("/")
         else:
@@ -54,6 +56,7 @@ def login_view(request):
 @login_required
 @require_GET
 def verify_view(request):
+    print(request.GET.get('key'))
     secret_ket = request.GET.get('key')
     if request.user.check_key(secret_ket):
         return render(request, 'confirmation_success.html')
@@ -67,5 +70,5 @@ def logout_view(request):
 
 
 def dashboard(request):
-    return render(request, 'dashboard.html', {'section': 'dashboard'})
+    return render(request, 'dashboard.html')
 

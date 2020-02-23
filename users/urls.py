@@ -3,7 +3,6 @@ from django.urls import path
 
 from users import views
 
-
 urlpatterns = [
 
     path('register', views.register),
@@ -12,7 +11,7 @@ urlpatterns = [
     path('verify-email', views.verify_view),
 
 
-    path('', views.dashboard)
+ #   path('', views.dashboard)
 
 ]
 

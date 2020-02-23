@@ -1,10 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% load static %}
 
-</body>
-</html>
+<header class="header">
+        <img
+                src="{% static 'svg/photo.svg' %}"
+                width="50"
+                height="50"
+        >
+
+        ImageMarks
+
+        <a href="/about">
+            About
+        </a>
+
+
+    {% if request.user.is_authenticated %}
+        <span>
+            {{ user }}
+        </span>
+        <a href="/logout">
+            Logout
+        </a>
+
+    {% else %}
+
+        <a href="/login">
+            Login
+        </a>
+    {% endif %}
+    </header>
