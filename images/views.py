@@ -7,13 +7,6 @@ from .forms import ImageCreateForm
 from .models import Image
 
 
-def image_detail(request, id, slug):
-    image = get_object_or_404(Image, id=id, slug=slug)
-    return render(request,
-                  'detail.html',
-                  {'section': 'images', 'image': image})
-
-
 @login_required
 def image_create(request):
     if request.method == 'POST':
@@ -33,7 +26,14 @@ def image_create(request):
             # Заполняем форму данными из GET-запроса.
             form = ImageCreateForm(data=request.GET)
             return render(request,
-                  'create.html',
-                  {'section': 'images', 'form': form})
+                          'create.html',
+                          {'section': 'images', 'form': form})
+
+
+def image_detail(request, id, slug):
+    image = get_object_or_404(Image, id=id, slug=slug)
+    return render(request,
+                  'detail.html',
+                  {'section': 'images', 'image': image})
 
 

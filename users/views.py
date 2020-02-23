@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.utils import timezone
 from django.views.decorators.http import require_GET
 
-from users.forms import RegistrationForm
+from .forms import RegistrationForm
 
 
 def register(request):
@@ -19,13 +19,13 @@ def register(request):
             user = form.save()
             print(user)
             login(request, user)
-            link = user.get_verification_link()
-            user.email_user(
-                "Email confirmation",
-                f"Please follow the <a href='{link}'>link</a>",
-                from_email='admin@adm.com'
-            )
-            user.verification_email_sent_at = timezone.now()
+#            link = user.get_verification_link()
+#            user.email_user(
+#                "Email confirmation",
+#                f"Please follow the <a href='{link}'>link</a>",
+#                from_email='admin@adm.com'
+#           )
+#            user.verification_email_sent_at = timezone.now()
             # Сохраняем пользователя в базе данных.
             user.save()
             return redirect("/")

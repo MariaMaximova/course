@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'welcome.apps.WelcomeConfig',
     'images.apps.ImagesConfig',
+
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
