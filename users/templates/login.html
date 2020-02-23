@@ -10,28 +10,28 @@
 </div>
 
 
-    <div class="card form" style="width: 60%;">
+    <div class="card form" style="width: 50%;">
+        <h3>
+            Login
+        </h3>
+
         Please enter your email and password!
         {% if error %}
         <span style="color: red;">
             Password or username is incorrect!
         </span>
 
-        <h1>
-            Login
-        </h1>
 
         {% endif %}
-
         <form action="/login" method="post">
             {% csrf_token %}
             <input name="username" type="text" placeholder="username">
             <input name="password" type="password" placeholder="password">
             <input class="submit-btn" type="submit">
         </form>
+
         <p>Please, use the following form to log-in. If you don't have an account
-            <a href="/register">
-                Register
+            <a href="/register"> register
             </a>
         </p>
     </div>

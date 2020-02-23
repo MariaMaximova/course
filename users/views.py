@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.views.decorators.http import require_GET
 
 from .forms import RegistrationForm
+from .models import Profile
 
 
 def register(request):
@@ -19,6 +20,7 @@ def register(request):
             user = form.save()
             print(user)
             login(request, user)
+            """
 #            link = user.get_verification_link()
 #            user.email_user(
 #                "Email confirmation",
@@ -26,7 +28,10 @@ def register(request):
 #                from_email='admin@adm.com'
 #           )
 #            user.verification_email_sent_at = timezone.now()
-            # Сохраняем пользователя в базе данных.
+            # Сохраняем пользователя в базе данных."""
+
+            # Создание профиля пользователя.
+            Profile.objects.create(user=user)
             user.save()
             return redirect("/")
         else:
@@ -61,7 +66,7 @@ def verify_view(request):
     if request.user.check_key(secret_ket):
         return render(request, 'confirmation_success.html')
     else:
-        return redirect("/")
+        return redirect('dashboard.html')
 
 
 def logout_view(request):
@@ -69,6 +74,5 @@ def logout_view(request):
     return redirect("/")
 
 
-def dashboard(request):
-    return render(request, 'dashboard.html')
-
+def dashboard_view(request):
+    return render(request, "dashboard.html")

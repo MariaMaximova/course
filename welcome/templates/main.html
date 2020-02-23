@@ -15,25 +15,26 @@
 </head>
 
 <body>
+
     {% include 'header.html' with user=user %}
     <div id="app">
         {% block content %}
 
-            <div class="card">
-                {% if not is_exists %}
-                    <form method="post" action="test/start">
-                        <input class="start-btn" type="submit">
-                    </form>
-                {% else %}
-                    <form method="post" action="test/continue">
-                        <input class="start-btn" type="submit">
-                    </form>
-                {% endif %}
-            </div>
+        <div class="card">
+            <h3>
+                Dashboard
+            </h3>
+
+            <p>
+                Welcome to dashboard. You can make bookmarked image.
+            </p>
+        </div>
+
+            {% endblock %}
+
+
     </div>
-
-    {% endblock %}
-
-
+    {% include 'footer.html' %}
 </body>
+
 </html>

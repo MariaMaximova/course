@@ -1,17 +1,35 @@
 {% extends 'main.html' %}
 
-{% block title %}
-Dashboard for all
-{% endblock %}
+{% block title %}Dashboard{% endblock %}
+
 {% block content %}
-<div class="card form">
-    <h1>
-        Dashboard
-    </h1>
+<div class="card">
+  <h2>Dashboard</h2>
 
+  {% with total_images_created=request.user.images_created.count %}
     <p>
-        Welcome to your dashboard.
+      Welcome to your dashboard.
+      You have bookmarked {{ total_images_created }}
+      image{{ total_images_created|pluralize }}.
     </p>
-</div>
 
+  {% load thumbnail %}
+  {% thumbnail image.image "300" as im %}
+  <a href="{{ image.image.url }}">
+    <img src="{{ im.url }}" class="image-detail">
+  </a>
+  {% endthumbnail %}
+
+  {% endwith %}
+
+  <p>
+    Drag the following button to your bookmarks toolbar
+    to bookmark images from other websites
+  <p>
+
+  <p>
+  You can also edit your profile or change your password.
+  <p>
+
+</div>
 {% endblock %}
