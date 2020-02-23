@@ -25,6 +25,7 @@ urlpatterns = [
     path('', include('users.urls')),
     path('', include('welcome.urls')),
     path('', include('images.urls')),
+#    path('', include('django.contrib.auth.urls'))
 
 ]
 
